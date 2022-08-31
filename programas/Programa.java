@@ -14,6 +14,7 @@ public class Programa {
       System.out.println("Escolha uma opção:");
       System.out.println("1 - Incluir pessoa");
       System.out.println("2 - Listar todos os cadastrados");
+      System.out.println("3 - Apagar lista de contatos");
       System.out.print("Opção: ");
 
       opcao = sc.nextInt();
@@ -44,12 +45,20 @@ public class Programa {
           i++;
           break;
         case 2:
-          for (int j = 0; j < 3; j++){
+          for (int j = 0; j < lista.length; j++){
             Pessoa itemLista = lista[j];
-            System.out.println("Contato " + j);
-            System.out.println("Contato nome: " + itemLista.getNome());
-            System.out.println("Contato sobrenome: " + itemLista.getSobrenome());
-            System.out.println("Contato telefone: " + itemLista.getTelefoneContato());
+
+            if (itemLista != null) {
+              System.out.println("Contato " + j);
+              System.out.println("Contato nome: " + itemLista.getNome());
+              System.out.println("Contato sobrenome: " + itemLista.getSobrenome());
+              System.out.println("Contato telefone: " + itemLista.getTelefoneContato());
+            }
+          }
+          break;
+        case 3:
+          for (int j = 0; j < lista.length; j++){
+            lista[j] = null;
           }
           break;
         default:
